@@ -20,5 +20,24 @@ en:
       description: "Description"
       file: "Image File"
       upload_button: "Upload Image"
+    title: "Title"
+    description: "Description"
+    edit: "Edit"
+    back: "Back"
+    delete: "Delete"
+    confirm_delete: "Are you sure?"
+    deleted: "Image was successfully deleted."
   errors:
     prohibited_saving: "prohibited this image from being saved"
+    messages:
+      invalid_format: "The file must be a JPEG or PNG"
+      too_large: "The file is too large. Maximum size is 3 MB."
+    models:
+      image:
+        attributes:
+          title:
+            blank: "Title can't be blank"
+          description:
+            blank: "Description can't be blank"
+          file:
+            blank: "File can't be blank"

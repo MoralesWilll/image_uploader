@@ -3,11 +3,11 @@
   <!-- Title and Description -->
   <div class="mb-6">
     <p class="text-lg font-semibold text-gray-800">
-      <strong class="text-gray-600">Title:</strong> <%= @image.title %>
+      <strong class="text-gray-600"><%= t("image.title") %>:</strong> <%= @image.title %>
     </p>
 
     <p class="text-lg font-semibold text-gray-800 mt-2">
-      <strong class="text-gray-600">Description:</strong> <%= @image.description %>
+      <strong class="text-gray-600"><%= t("image.description") %>:</strong> <%= @image.description %>
     </p>
   </div>
 
@@ -20,11 +20,15 @@
 
   <!-- Links -->
   <div class="mt-4 flex items-center space-x-4">
-    <%= link_to 'Edit', edit_image_path(@image, locale: I18n.locale), class: "text-indigo-600 hover:text-indigo-800 font-medium" %>
+    <%= link_to t('image.edit'), edit_image_path(@image, locale: I18n.locale), class: "text-indigo-600 hover:text-indigo-800 font-medium" %>
     <span>|</span>
-    <%= link_to 'Back', images_path(locale: I18n.locale), class: "text-indigo-600 hover:text-indigo-800 font-medium" %>
+    <%= link_to t('image.back'), images_path(locale: I18n.locale), class: "text-indigo-600 hover:text-indigo-800 font-medium" %>
     <span>|</span>
-    <%= button_to 'Delete', image_path(@image, locale: I18n.locale), method: :delete, data: { confirm: 'Are you sure?' }, class: "text-red-600 hover:text-red-800 font-medium" %>
+    <%= form_with model: @image, url: image_path(@image, locale: I18n.locale), method: :delete, local: true do |form| %>
+  <%= form.button t('image.delete'), class: "text-red-600 hover:text-red-800 font-medium", data: { confirm: t('image.confirm_delete') } %>
+<% end %>
+
+
   </div>
 
 </div>

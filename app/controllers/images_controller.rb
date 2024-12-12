@@ -50,13 +50,10 @@ class ImagesController < ApplicationController
     end
   end
 
-  # DELETE /images/1 or /images/1.json
   def destroy
+    @image = Image.find(params[:id])
     @image.destroy
-    respond_to do |format|
-      format.turbo_stream { render turbo_stream: turbo_stream.remove(@image) }
-      format.html { redirect_to images_url(locale: I18n.locale), notice: "Image was successfully deleted." }
-    end
+    redirect_to images_path, notice: t("image.deleted") # You can change this as needed
   end
 
   private

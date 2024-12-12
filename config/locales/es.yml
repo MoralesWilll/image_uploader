@@ -10,7 +10,7 @@ es:
     confirm_delete: "¿Estás seguro?"
     description: "Descripción"
     upload_image: "Subir Imagen"
-    back_to_images: "Volver a imagenes"
+    back_to_images: "Volver a imágenes"
   flash:
     notice: "Imagen subida con éxito."
     error: "Algo salió mal."
@@ -20,5 +20,24 @@ es:
       description: "Descripción"
       file: "Archivo de Imagen"
       upload_button: "Subir Imagen"
+    title: "Título"
+    description: "Descripción"
+    edit: "Editar"
+    back: "Volver"
+    delete: "Eliminar"
+    confirm_delete: "¿Estás seguro?"
+    deleted: "La imagen se eliminó con éxito."
   errors:
     prohibited_saving: "prohibió que esta imagen se guardara"
+    messages:
+      invalid_format: "El archivo debe ser JPEG o PNG"
+      too_large: "El archivo es demasiado grande. El tamaño máximo es 3 MB."
+    models:
+      image:
+        attributes:
+          title:
+            blank: "El título no puede estar en blanco"
+          description:
+            blank: "La descripción no puede estar en blanco"
+          file:
+            blank: "El archivo no puede estar en blanco"
