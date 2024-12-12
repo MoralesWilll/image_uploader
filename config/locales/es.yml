@@ -1,0 +1,24 @@
+es:
+  hello: "Hola"
+  images:
+    title: "Imágenes"
+    new: "Nueva Imagen"
+    edit: "Editar"
+    back: "Volver"
+    delete: "Eliminar"
+    show: "Mostrar"
+    confirm_delete: "¿Estás seguro?"
+    description: "Descripción"
+    upload_image: "Subir Imagen"
+    back_to_images: "Volver a imagenes"
+  flash:
+    notice: "Imagen subida con éxito."
+    error: "Algo salió mal."
+  image:
+    form:
+      title: "Título"
+      description: "Descripción"
+      file: "Archivo de Imagen"
+      upload_button: "Subir Imagen"
+  errors:
+    prohibited_saving: "prohibió que esta imagen se guardara"

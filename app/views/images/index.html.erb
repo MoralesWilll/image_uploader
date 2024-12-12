@@ -1,0 +1,38 @@
+<div class="w-full">
+  <!-- Notice Message -->
+  <% if notice.present? %>
+    <div class="py-2 px-4 mb-6 bg-green-100 text-green-600 font-semibold rounded-md shadow-md inline-flex items-center" id="notice">
+      <svg class="w-5 h-5 mr-2" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+        <path d="M8 0a8 8 0 1 0 8 8A8 8 0 0 0 8 0zm1 12a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm-1-3a1 1 0 0 1-.865-1.5l.865-1.732.865 1.732A1 1 0 0 1 8 9z"/>
+      </svg>
+      <span><%= notice %></span>
+    </div>
+  <% end %>
+
+  <!-- Page Title and New Image Button -->
+  <div class="flex justify-between items-center mb-6">
+    <h1 class="font-extrabold text-3xl text-gray-800"><%= t("images.title") %></h1>
+    <%= link_to t("images.new"), new_image_path(locale: I18n.locale), class: "rounded-lg py-2 px-6 bg-blue-600 text-white font-semibold hover:bg-blue-700 transition duration-300" %>
+  </div>
+
+  <!-- Image List Section -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+    <% @images.each do |image| %>
+      <div class="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-2xl transition duration-300">
+        <!-- Image Card -->
+        <%= link_to image_path(image, locale: I18n.locale), class: "block relative" do %>
+          <%= image_tag image.file.variant(resize_to_limit: [300, 300]).processed, alt: image.title, class: "object-cover w-full h-48" %>
+        <% end %>
+        
+        <div class="p-4">
+          <h3 class="text-xl font-medium text-gray-700 truncate"><%= image.title %></h3>
+          <p class="text-sm text-gray-500 mt-2"><%= image.description %></p>
+        </div>
+
+        <div class="p-4 bg-gray-50 flex justify-between items-center">
+          <%= link_to t("images.show"), image_path(image, locale: I18n.locale), class: "text-blue-600 hover:text-blue-700 font-medium text-sm" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

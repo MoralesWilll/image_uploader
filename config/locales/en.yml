@@ -1,0 +1,24 @@
+en:
+  hello: "Hello"
+  images:
+    title: "Images"
+    new: "New Image"
+    edit: "Edit"
+    back: "Back"
+    delete: "Delete"
+    show: "Show"
+    confirm_delete: "Are you sure?"
+    description: "Description"
+    upload_image: "Upload Image"
+    back_to_images: "Back to images"
+  flash:
+    notice: "Image successfully uploaded."
+    error: "Something went wrong."
+  image:
+    form:
+      title: "Title"
+      description: "Description"
+      file: "Image File"
+      upload_button: "Upload Image"
+  errors:
+    prohibited_saving: "prohibited this image from being saved"

@@ -1,0 +1,30 @@
+<div class="max-w-3xl mx-auto p-6 bg-white rounded-lg shadow-md">
+
+  <!-- Title and Description -->
+  <div class="mb-6">
+    <p class="text-lg font-semibold text-gray-800">
+      <strong class="text-gray-600">Title:</strong> <%= @image.title %>
+    </p>
+
+    <p class="text-lg font-semibold text-gray-800 mt-2">
+      <strong class="text-gray-600">Description:</strong> <%= @image.description %>
+    </p>
+  </div>
+
+  <!-- Image Display -->
+  <% if @image.file.attached? %>
+    <div class="mb-6">
+      <%= image_tag @image.file.variant(resize_to_limit: [500, 500]).processed, class: "rounded-lg shadow-md" %>
+    </div>
+  <% end %>
+
+  <!-- Links -->
+  <div class="mt-4 flex items-center space-x-4">
+    <%= link_to 'Edit', edit_image_path(@image, locale: I18n.locale), class: "text-indigo-600 hover:text-indigo-800 font-medium" %>
+    <span>|</span>
+    <%= link_to 'Back', images_path(locale: I18n.locale), class: "text-indigo-600 hover:text-indigo-800 font-medium" %>
+    <span>|</span>
+    <%= button_to 'Delete', image_path(@image, locale: I18n.locale), method: :delete, data: { confirm: 'Are you sure?' }, class: "text-red-600 hover:text-red-800 font-medium" %>
+  </div>
+
+</div>

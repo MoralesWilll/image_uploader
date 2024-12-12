@@ -1,0 +1,16 @@
+<div id="<%= dom_id(image) %>">
+  <p class="my-5">
+    <strong class="block font-medium mb-1"><%= t("image.show.title") %>:</strong>
+    <%= image.title %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1"><%= t("image.show.description") %>:</strong>
+    <%= image.description %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1"><%= t("image.show.file") %>:</strong>
+    <%= link_to image.file.filename, image.file if image.file.attached? %>
+  </p>
+</div>

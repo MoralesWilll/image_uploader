@@ -1,0 +1,16 @@
+<div class="mx-auto md:w-2/3 w-full p-6 bg-white rounded-lg shadow-lg">
+
+  <!-- Page Title -->
+  <h1 class="font-bold text-4xl text-gray-800 mb-6">Editing Image</h1>
+
+  <!-- Form Section -->
+  <%= render "form", image: @image %>
+
+  <!-- Links Section -->
+  <div class="mt-6 flex justify-between items-center">
+  <%= link_to "Show this image", image_path(@image, locale: I18n.locale), class: "text-white bg-indigo-600 hover:bg-indigo-700 rounded-lg py-2 px-4 font-semibold transition duration-300" %>
+  <%= link_to "Back to images", images_path(locale: I18n.locale), class: "text-gray-600 hover:text-gray-800 border border-gray-300 hover:bg-gray-100 rounded-lg py-2 px-4 font-semibold transition duration-300" %>
+</div>
+
+
+</div>
