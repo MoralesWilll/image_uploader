@@ -39,7 +39,7 @@ gem "bootsnap", require: false
 gem "cloudinary", "~> 2.2"
 gem "dotenv-rails"
 gem "mini_magick"
-gem "image_processing", "~> 1.2"
+gem "image_processing", "~> 1.14"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
